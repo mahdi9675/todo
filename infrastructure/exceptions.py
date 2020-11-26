@@ -1,3 +1,8 @@
+class SingltonObjectInitializationError(Exception):
+    def __init__(self):
+        super().__init__('the object has been Initialized!')
+
+
 class NotImplementError(Exception):
     def __init__(self):
         super().__init__('method is not implement yet!')

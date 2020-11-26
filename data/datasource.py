@@ -1,4 +1,5 @@
 from infrastructure.exceptions import NotImplementError
+from infrastructure.exceptions import SingltonObjectInitializationError
 from data.entities import Db
 
 
@@ -7,7 +8,7 @@ class DataSource:
 
     def __init__(self):
         if DataSource.__instance is not None:
-            raise Exception('the object has been Initialized')
+            raise SingltonObjectInitializationError()
         else:
             DataSource.__instance = DataSource.__connection()
 
